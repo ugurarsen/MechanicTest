@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,17 +22,31 @@ public class TouchHandler : Singleton<TouchHandler>
     public bool IsActive() => GameManager.isRunning && canPlay;
     public void Enable(bool isActive) => canPlay = isActive;
     
+    
+    
+    
     public void OnGameStarted()
+    {
+        
+        Enable(true);
+    }
+
+    private void Start()
     {
         OnDown = CoreDown;
         OnUp = CoreUp;
         OnDrag = CoreDrag;
-        Enable(true);
+        
     }
-    
-    
+
+    private void Update()
+    {
+        HandleTouch();
+    }
+
     void HandleTouch()
     {
+        Debug.Log("Handle");
         if (!isDragging)
         {
             if (Input.GetMouseButtonDown(0))
@@ -54,7 +69,9 @@ public class TouchHandler : Singleton<TouchHandler>
     
     void CoreDown()
     {
+        Debug.Log("Dif"+dif);
         fp = Input.mousePosition;
+        Debug.Log(fp);
     }
     void CoreUp()
     {

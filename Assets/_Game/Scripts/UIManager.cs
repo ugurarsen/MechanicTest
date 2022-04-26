@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -61,6 +62,7 @@ public class UIManager : Singleton<UIManager>
 
     public void OnGameStarted()
     {
+        activePanel = pnl.mainMenu;
         FadeInAndOutPanels(pnl.gameIn);
     }
     
@@ -97,6 +99,11 @@ public class UIManager : Singleton<UIManager>
                 _in.blocksRaycasts = true;
             });
         }
+    }
+    
+    public void ReloadScene()
+    {
+        GameManager.ReloadScene();
     }
     
 

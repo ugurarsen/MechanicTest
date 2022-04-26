@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Plane
+  m_Name: Wall
   m_Shader: {fileID: 4800000, guid: 881c73b45dda42d4ba29f8c7742329be, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _MK_LIGHTMODEL_LAMBERT _MK_LIGHTTYPE_CEL_SHADE_SIMPLE
     _MK_MODE_TRANSPARENT
@@ -111,12 +111,12 @@ Material:
     - _GlossyReflections: 1
     - _LightCuts: 3
     - _LightModel: 1
-    - _LightSmoothness: 0
+    - _LightSmoothness: 0.434
     - _LightThreshold: 0.3
     - _LightType: 1
-    - _MKEditorShowDetailBehavior: 0
+    - _MKEditorShowDetailBehavior: 1
     - _MKEditorShowDissolveBehavior: 0
-    - _MKEditorShowLightBehavior: 0
+    - _MKEditorShowLightBehavior: 1
     - _MKEditorShowMainBehavior: 1
     - _MKEditorShowOutlineBehavior: 0
     - _MKEditorShowReflectionBehavior: 0
@@ -160,7 +160,7 @@ Material:
     - _UseTranslucent: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
+    - _Color: {r: 0.8584906, g: 0.84003115, b: 0.068841234, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
