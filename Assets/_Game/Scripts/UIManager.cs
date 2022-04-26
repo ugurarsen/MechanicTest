@@ -7,6 +7,7 @@ using DG.Tweening;
 
 public class UIManager : Singleton<UIManager>
 {
+    
     #region VERIBLES
 
     [Header("Panels")]
@@ -16,20 +17,25 @@ public class UIManager : Singleton<UIManager>
     [Header("Texts")]
     [SerializeField] Texts txt;
 
-    [Range(0.01f, 2f)] [SerializeField] private float _fade;
+    [Range(0.01f, 2f)]
+    [SerializeField] private float _fade;
+    
+    
+    
+    [System.Serializable]
     public class Panels
     {
         public CanvasGroup mainMenu, gameIn, success;
     }
-    
+    [System.Serializable]
     public class Buttons
     {
-        public Button play, nextLevel,getPrize;
+        public Button play, contuniue;
     }
-    
+    [System.Serializable]
     public class Texts
     {
-        public TextMeshProUGUI level, money;
+        public TextMeshProUGUI diamonMain, collectDiamondGameIn, diamondFinis, collectDiamondFinish;
     }
 
     private CanvasGroup activePanel = null;
@@ -60,7 +66,7 @@ public class UIManager : Singleton<UIManager>
     
     public void OnSuccess()
     {
-        btn.nextLevel.gameObject.SetActive(true);
+        btn.contuniue.gameObject.SetActive(true);
         FadeInAndOutPanels(pnl.success);
     }
     
