@@ -28,14 +28,13 @@ public class DiamondSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(second);
         TransformRandomizer();
-        if (Distance() > 5f)
+        if (Distance() > 7f)
         {
             Spawn();
         }
         else
         {
             StartCoroutine(WaitAndSpawn(0f));
-            Debug.Log("TekrarÜret");
         }
     }
 

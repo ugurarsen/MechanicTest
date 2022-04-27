@@ -8,7 +8,6 @@ public class Diamond : MonoBehaviour
     [HideInInspector] public DiamondSpawner diamondSpawner;
     public void OnDeactivate()
     {
-        diamondSpawner.SpawnDiamond();
         gameObject.SetActive(false);
     }
 
@@ -27,7 +26,8 @@ public class Diamond : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            SaveLoadManager.AddDiamond(10);
+            UIManager.S.CollectDiamond(10);
+            diamondSpawner.SpawnDiamond();
             OnDeactivate();
         }
     }

@@ -36,7 +36,6 @@ public class TouchHandler : Singleton<TouchHandler>
         OnDown = CoreDown;
         OnUp = CoreUp;
         OnDrag = CoreDrag;
-        
     }
 
     private void Update()
@@ -46,25 +45,28 @@ public class TouchHandler : Singleton<TouchHandler>
 
     void HandleTouch()
     {
-        Debug.Log("Handle");
-        if (!isDragging)
+        if (IsActive())
         {
-            if (Input.GetMouseButtonDown(0))
+            if (!isDragging)
             {
-                OnDown?.Invoke();
-                isDragging = true;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    OnDown?.Invoke();
+                    isDragging = true;
+                }
             }
-        }
-        else
-        {
-            OnDrag?.Invoke();
+            else
+            {
+                OnDrag?.Invoke();
 
-            if (Input.GetMouseButtonUp(0))
-            {
-                OnUp?.Invoke();
-                isDragging = false;
+                if (Input.GetMouseButtonUp(0))
+                {
+                    OnUp?.Invoke();
+                    isDragging = false;
+                }
             }
         }
+        
     }
     
     void CoreDown()

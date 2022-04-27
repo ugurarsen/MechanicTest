@@ -19,7 +19,7 @@ public class GameManager : Singleton<GameManager>
     public static void OnCompleted()
     {
         isRunning = false;
-        canStart = false;
+        canStart = true;
         UIManager.S.OnSuccess();
     }
     
